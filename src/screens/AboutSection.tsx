@@ -1,17 +1,18 @@
-import { Card, CardContent } from "../../../../components/ui/card";
-import { Button } from "../../../../components/ui/button";
-import { DividerSection } from "../../../ElementLight/sections/DividerSection";
 import { Separator } from "@radix-ui/react-separator";
-import SpiderWeb from "../../../../components/ui/SpiderWeb";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import { Card, CardContent } from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { DividerSection } from "../components/ui/DividerSection";
+import SpiderWeb from "../components/ui/SpiderWeb";
+import HeaderSection from "../components/ui/HeaderSection";
+import FooterSection from "../components/ui/FooterSection";
 
-export const AboutSection = (): JSX.Element => {
+
+const AboutSection = () => {
   const features = [
+
     {
       icon: "🛡️",
       number: "1",
@@ -78,18 +79,18 @@ export const AboutSection = (): JSX.Element => {
 
   return (
     <div className="relative w-full bg-everefficientlkwhite overflow-x-hidden">
-      {/* Hero Banner Section */}
+      <HeaderSection />
       <section className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] hidden bg-black overflow-hidden flex items-center justify-center">
         <a href="#about" className="absolute inset-0 z-0 block">
-          {/* <div className="relative w-full  min-h-screen overflow-hidden">
+          <div className="relative w-full  min-h-screen overflow-hidden">
             <SpiderWeb />
-          </div> */}
+          </div>
         </a>
         <div className="relative z-10 text-center px-4 max-w-[1200px]">
           <h1 className="text-everefficientlkwhite text-3xl sm:text-4xl md:text-[40px] leading-[1.2] font-bold">
             About Us
           </h1>
-          {/* <div className="mt-3 sm:mt-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-[29px]">
+          <div className="mt-3 sm:mt-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-[29px]">
             <div className="flex items-center">
               <a
                 className="text-everefficientlkwhite whitespace-nowrap text-sm sm:text-base"
@@ -108,15 +109,13 @@ export const AboutSection = (): JSX.Element => {
             <span className="text-everefficientlkcerulean-blue whitespace-nowrap text-sm sm:text-base">
               About Us
             </span>
-          </div> */}
+          </div>
         </div>
       </section>
 
-      {/* Our Story Section */}
       <section className="py-12 md:py-16 lg:py-20 mt-16 bg-white">
         <div className="container px-4 mx-auto">
           <div className="grid items-center grid-cols-1 gap-8 md:gap-12 mx-auto lg:grid-cols-2 max-w-7xl">
-            {/* Images Column */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -156,7 +155,6 @@ export const AboutSection = (): JSX.Element => {
               </Card>
             </motion.div>
 
-            {/* Content Column */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -231,7 +229,6 @@ export const AboutSection = (): JSX.Element => {
       <Separator className="w-full h-px border-t border-[#757f95] opacity-25" />
       <DividerSection />
 
-      {/* Features Section */}
       <section
         className="relative py-8 sm:py-12 px-4 sm:px-6 md:px-12 text-center text-white min-h-[300px] sm:min-h-[350px] bg-fixed"
         style={{
@@ -271,8 +268,7 @@ export const AboutSection = (): JSX.Element => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="flex flex-col w-full items-center py-6 sm:py-[30px] bg-everefficientlkprussian-blue-85 bg-[url(..//background.png)] bg-cover bg-center">
+      {/*<section className="flex flex-col w-full items-center py-6 sm:py-[30px] bg-everefficientlkprussian-blue-85 bg-[url(..//background.png)] bg-cover bg-center">
         <div className="relative max-w-[1200px] w-full h-auto py-6 sm:py-10 px-4 sm:px-6">
           <div className="flex flex-col items-center mb-6 sm:mb-10">
             <div className="relative w-[200px] sm:w-[245px] h-4 sm:h-5 mb-4 sm:mb-6 border-b-2 border-[#275ba8]">
@@ -370,7 +366,10 @@ export const AboutSection = (): JSX.Element => {
             ))}
           </Swiper>
         </div>
-      </section>
+      </section>*/}
+      <FooterSection />
     </div>
   );
 };
+
+export default AboutSection;

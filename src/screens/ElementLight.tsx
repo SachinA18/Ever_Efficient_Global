@@ -1,4 +1,3 @@
-import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -7,30 +6,20 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "../../components/ui/accordion";
-import { Button } from "../../components/ui/button";
-import { Card, CardContent } from "../../components/ui/card";
-import { Separator } from "../../components/ui/separator";
-import { BackgroundSection } from "./sections/BackgroundSection";
-import { ContentSection } from "./sections/ContentSection";
-import { DividerSection } from "./sections/DividerSection";
-import { FooterSection } from "../../components/ui/FooterSection/FooterSection";
-import { HeaderSection } from "../../components/ui/HeaderSection";
-import { MainContentSection } from "./sections/MainContentSection/MainContentSection";
-import { OverlapGroupSection } from "./sections/OverlapGroupSection";
-import { OverlapSection } from "./sections/OverlapSection";
-import { InfiniteSlider } from "../../components/ui/infinite-slider";
+} from "../components/ui/accordion";
+import { Button } from "../components/ui/button";
+import { Card, CardContent } from "../components/ui/card";
+import { Separator } from "../components/ui/separator";
+import { DividerSection } from "../components/ui/DividerSection";
+import FooterSection from "../components/ui/FooterSection";
+import HeaderSection from "../components/ui/HeaderSection";
+import { MainContentSection } from "../components/ui/MainContentSection";
+import { OverlapGroupSection } from "../components/ui/OverlapGroupSection";
+import { OverlapSection } from "../components/ui/OverlapSection";
+import { InfiniteSlider } from "../components/ui/infinite-slider";
+import { BackgroundSection } from "../components/ui/BackgroundSection";
 
-export const ElementLight = (): JSX.Element => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isMuted, setIsMuted] = useState(true);
-
-  const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(videoRef.current.muted);
-    }
-  };
+const ElementLight = () => {
   
   // FAQ data for mapping
   const faqItems = [
@@ -329,7 +318,7 @@ export const ElementLight = (): JSX.Element => {
       {/* Thumbnails Section */}
       <section className="py-8 md:py-12 overflow-hidden bg-everefficientlkathens-gray">
         <div className="container px-4 mx-auto">
-          <InfiniteSlider speedOnHover={16} gap={16} mdGap={24}>
+          <InfiniteSlider speedOnHover={16} gap={24}>
             {thumbnails.concat(thumbnails).map((thumb, index) => (
               <img
                 key={index}
@@ -427,9 +416,10 @@ export const ElementLight = (): JSX.Element => {
         </div>
       </div>
     </section>
-
       <BackgroundSection />
       <FooterSection />
     </div>
   );
 };
+
+export default ElementLight;

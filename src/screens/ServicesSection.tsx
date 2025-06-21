@@ -1,7 +1,6 @@
-import { ArrowRightIcon } from "lucide-react";
-import { Button } from "../../../../components/ui/button";
-import SpiderWeb from "../../../../components/ui/SpiderWeb";
 import { motion } from "framer-motion";
+import FooterSection from "../components/ui/FooterSection";
+import HeaderSection from "../components/ui/HeaderSection";
 // Service data for mapping
 const services = [
   {
@@ -176,10 +175,10 @@ const services = [
   },
 ];
 
-export const ServicesSection = (): JSX.Element => {
+const ServicesSection = () => {
   return (
     <div className="relative w-full mt-16 bg-everefficientlkwhite">
-      {/* Responsive Service Cards */}
+      <HeaderSection />
       {services.map((service, index) => (
         <motion.div
           key={service.id}
@@ -270,6 +269,9 @@ export const ServicesSection = (): JSX.Element => {
           </div>
         </motion.div>
       ))}
+      <FooterSection />
     </div>
   );
 };
+
+export default ServicesSection;

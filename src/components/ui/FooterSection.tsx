@@ -6,9 +6,8 @@ import {
   MapPinIcon,
   PhoneIcon,
 } from "lucide-react";
-import { Card, CardContent } from "../card";
-import { Button } from "../button";
-import { FaWhatsapp } from "react-icons/fa";
+import { Button } from "./button";
+//import { FaWhatsapp } from "react-icons/fa";
 
 // Data for quick links
 const quickLinks = [
@@ -37,7 +36,7 @@ const contactInfo = [
   },
 ];
 
-export const FooterSection = (): JSX.Element => {
+const FooterSection = () => {
   return (
     <footer className="w-full px-4 py-8 md:px-10 bg-everefficientlkblack">
       <div className="container mx-auto">
@@ -142,7 +141,7 @@ export const FooterSection = (): JSX.Element => {
               rel="noopener noreferrer"
               className="w-9 h-9 flex items-center justify-center bg-white rounded-[10px_10px_10px_0px] text-everefficientlkcerulean-blue hover:scale-105 transition"
             >
-              <FaWhatsapp className="w-5 h-5" />
+              {/*<FaWhatsapp className="w-5 h-5" />*/}
             </a>
             <a
               href="https://www.facebook.com/everefficient.official"
@@ -158,3 +157,5 @@ export const FooterSection = (): JSX.Element => {
     </footer>
   );
 };
+
+export default FooterSection;

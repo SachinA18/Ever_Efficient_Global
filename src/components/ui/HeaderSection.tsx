@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { Button } from "../button";
+import { useEffect, useState } from "react";
+import { Button } from "./button";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-} from "../navigation-menu";
+} from "./navigation-menu";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -15,7 +15,7 @@ const navigationLinks = [
   { text: "About Us", url: "/About" },
 ];
 
-export const HeaderSection = (): JSX.Element => {
+const HeaderSection = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -24,9 +24,9 @@ export const HeaderSection = (): JSX.Element => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       if (currentScrollY > lastScrollY && currentScrollY > 0.1) {
-        setShowHeader(false); // scrolling down
+        setShowHeader(false);
       } else {
-        setShowHeader(true); // scrolling up
+        setShowHeader(true);
       }
       setLastScrollY(currentScrollY);
     };
@@ -124,3 +124,6 @@ export const HeaderSection = (): JSX.Element => {
     </header>
   );
 };
+
+    
+export default HeaderSection;

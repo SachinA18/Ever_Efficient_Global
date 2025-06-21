@@ -1,15 +1,8 @@
-import React from "react";
-import { Card, CardContent } from "../../../../components/ui/card";
-import { motion } from "framer-motion"
-import { InfiniteSlider } from "../../../../components/ui/infinite-slider";
+import { Card, CardContent } from "./card";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 
-// Testimonial data for mapping
 const testimonials = [
   {
     id: 1,
@@ -49,7 +42,7 @@ export const BackgroundSection = (): JSX.Element => {
   return (
     <section className="flex flex-col w-full items-center py-[30px] bg-everefficientlkprussian-blue-85 bg-[url(..//background.png)] bg-cover bg-center">
       <div className="relative max-w-[1200px] w-full h-auto py-10">
-        {/* Section header */}
+
         <div className="flex flex-col items-center mb-10">
           <div className="relative w-[245px] h-5 mb-6 border-b-2 border-[#275ba8]">
             <img
@@ -73,7 +66,6 @@ export const BackgroundSection = (): JSX.Element => {
           </p>
         </div>
 
-        {/* Testimonial cards */}
         <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={20}
@@ -147,9 +139,7 @@ export const BackgroundSection = (): JSX.Element => {
               </SwiperSlide>
             ))}
           </Swiper>
-  
       </div>
-   
     </section>
   );
 };

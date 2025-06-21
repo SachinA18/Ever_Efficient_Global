@@ -6,12 +6,11 @@ import {
   NavBody,
   NavItems,
   MobileNav,
-  NavbarLogo,
   NavbarButton,
   MobileNavHeader,
   MobileNavToggle,
   MobileNavMenu,
-} from "./../../../../components/ui/resizable-navbar";
+} from "./resizable-navbar";
 
 export function NavbarDemo() {
   const navItems = [
@@ -37,22 +36,19 @@ export function NavbarDemo() {
           {/* Contact Button */}
           <div className="flex items-center gap-4">
             <NavbarButton
-              asChild
               variant="primary"
               className="bg-[#275ba8] hover:bg-[#1e4a8c] rounded-[50px_50px_50px_0px] shadow-[0px_0px_40px_5px_#0000000d] h-10 px-6 text-everefficientlkwhite text-sm font-medium tracking-wide transition-all duration-300"
+              href="/Contact"
+              rel="noopener noreferrer"
             >
-              <a
-                href="/Contact"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2"
-              >
+              <span className="flex items-center gap-2">
                 <img
                   className="w-4 h-4"
                   alt="Component"
                   src="/component-1-38.svg"
                 />
                 <span>CONTACT US</span>
-              </a>
+              </span>
             </NavbarButton>
           </div>
         </NavBody>

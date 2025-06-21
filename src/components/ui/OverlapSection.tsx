@@ -1,19 +1,12 @@
-// src/sections/OverlapSection.tsx
-import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation, EffectFade } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/effect-fade";
 import { motion } from "framer-motion";
 
 
 import { ArrowRightIcon } from "lucide-react";
-import { Button } from "../../../../components/ui/button";
-import { ParticlesBackground } from "../../../../data/ParticlesBackground";
+import { Button } from "./button";
+import { ParticlesBackground } from "../../data/ParticlesBackground";
 
-// Slide content data
 const slides = [
   {
     image: "./1.jpg",
@@ -62,7 +55,6 @@ const slides = [
 ];
 
 export const OverlapSection = (): JSX.Element => {
-  //framer effects
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
     visible: {
@@ -77,10 +69,8 @@ export const OverlapSection = (): JSX.Element => {
   
   return (
     <section className="relative w-full min-h-screen overflow-hidden">
-      {/* Particle Background */}
       <ParticlesBackground />
 
-      {/* Swiper Slider */}
       <Swiper
         modules={[Autoplay, Pagination, Navigation, EffectFade]}
         effect="fade"
@@ -93,7 +83,6 @@ export const OverlapSection = (): JSX.Element => {
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
           <div className="relative flex items-center justify-center w-full h-screen">
-            {/* Background image + overlay */}
             <img
               src={slide.image}
               alt={slide.heading}
@@ -101,10 +90,9 @@ export const OverlapSection = (): JSX.Element => {
             />
             <div className="absolute inset-0 bg-gradient-to-r from-everefficientlkblue-zodiac-70 to-everefficientlkblue-zodiac-70 mix-blend-multiply"></div>
         
-            {/* Slide Content */}
             <div className="container relative z-10 px-10 py-24 mx-auto text-center">
               <motion.h1
-                key={`heading-${index}`} // Re-render this on slide change
+                key={`heading-${index}`}
                 className="mb-8 text-5xl font-bold leading-tight md:text-6xl lg:text-7xl text-everefficientlkwhite"
                 initial="hidden"
                 animate="visible"
@@ -114,7 +102,7 @@ export const OverlapSection = (): JSX.Element => {
               </motion.h1>
         
               <motion.p
-                key={`desc-${index}`} // Re-render this on slide change
+                key={`desc-${index}`}
                 className="max-w-2xl mx-auto mb-12 text-lg md:text-xl text-zinc-300"
                 initial="hidden"
                 animate="visible"
@@ -155,7 +143,6 @@ export const OverlapSection = (): JSX.Element => {
             </div>
           </div>
         </SwiperSlide>
-        
         ))}
       </Swiper>
     </section>
